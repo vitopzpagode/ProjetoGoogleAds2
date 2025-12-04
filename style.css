@@ -1,0 +1,185 @@
+/* style.css - Estilo principal para todo o site */
+
+/* RESET */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:#ffffff; /* fundo branco conforme pedido */
+  color:#111;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Layout base: site ocupa 100vh para empurrar footer ao fim */
+.site {
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+
+/* HEADER (HERO) - Degradê animado tipo "vídeo" */
+.header-hero{
+  text-align:center;
+  padding:72px 20px;
+  color:#fff;
+  background: linear-gradient(120deg,#4285F4,#DB4437,#F4B400,#0F9D58,#4285F4);
+  background-size:600% 600%;
+  animation: googleFlow 12s linear infinite;
+  border-bottom-left-radius:14px;
+  border-bottom-right-radius:14px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+}
+@keyframes googleFlow{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+.header-hero .logo {
+  width:132px;
+  height:auto;
+  display:inline-block;
+  margin-bottom:16px;
+  filter: drop-shadow(0 8px 24px rgba(0,0,0,0.25));
+}
+
+.header-hero h1{
+  font-size:44px;
+  line-height:1;
+  letter-spacing:-0.6px;
+  margin-bottom:8px;
+  font-weight:700;
+}
+
+.header-hero p.lead{
+  margin-bottom:6px;
+  opacity:0.95;
+  font-size:18px;
+}
+
+.header-hero p.credits{
+  font-size:14px;
+  opacity:0.85;
+}
+
+/* NAVBAR (simples abaixo do header) */
+.navbar{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  background:#ffffff;
+  padding:12px 10px;
+  border-bottom:1px solid #e6e6e6;
+}
+.navbar a{
+  color:#1a73e8;
+  text-decoration:none;
+  font-weight:600;
+  padding:6px 10px;
+  border-radius:8px;
+}
+.navbar a.active,
+.navbar a:hover{ background: rgba(26,115,232,0.08); }
+
+/* MAIN area (conteúdo) */
+main.site-main{
+  flex:1 0 auto;
+  width:92%;
+  max-width:1100px;
+  margin:36px auto;
+  padding:0 12px 36px;
+}
+
+/* Titulos e paragrafos */
+h2.section-title{ font-size:26px; margin-bottom:12px; color:#0f1724; }
+p.lead-text{ font-size:16px; line-height:1.6; color:#1f2937; margin-bottom:14px; }
+
+/* Cards / caixas */
+.card {
+  background:#f7fafc;
+  border-radius:12px;
+  padding:20px;
+  box-shadow: 0 8px 28px rgba(2,6,23,0.04);
+  margin-bottom:20px;
+  color:#0f1724;
+}
+
+/* monospace box (fluxograma / código) */
+.pre-box{
+  font-family: "Roboto Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  white-space:pre-wrap;
+  background:#fff;
+  border-left:6px solid #1a73e8;
+  padding:18px;
+  border-radius:10px;
+  box-shadow: 0 6px 20px rgba(2,6,23,0.04);
+  color:#07143a;
+}
+
+/* imagem diagrama */
+.imagem-diagrama{
+  display:block;
+  margin:20px auto;
+  max-width:720px;
+  width:100%;
+  border-radius:10px;
+  box-shadow: 0 12px 36px rgba(2,6,23,0.06);
+}
+
+/* lista */
+ul.clean-list{ margin-left:18px; margin-top:8px; margin-bottom:8px; color:#0f1724; }
+ul.clean-list li{ margin-bottom:10px; line-height:1.55; }
+
+/* botões */
+.btn{
+  display:inline-block;
+  background:#1a73e8;
+  color:#fff;
+  padding:10px 16px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:700;
+}
+.btn:hover{ background:#0f5ad3; }
+
+/* SOBRE: logo centralizada */
+.logo-sobre{ display:block; margin:18px auto; width:160px; height:auto; }
+
+/* PESSOAS (cards de autores) */
+.autores{
+  display:flex;
+  gap:22px;
+  flex-wrap:wrap;
+  justify-content:center;
+  margin-top:12px;
+}
+.autor{
+  background:#fff;
+  border-radius:12px;
+  padding:16px;
+  width:300px;
+  box-shadow:0 10px 30px rgba(2,6,23,0.05);
+  text-align:left;
+}
+.autor h3{ margin-bottom:6px; font-size:18px; }
+.autor p{ color:#374151; font-size:14px; }
+
+/* FOOTER (AZUL e alinhado) */
+.site-footer{
+  background:#1a73e8;
+  color:#fff;
+  padding:28px 12px;
+  text-align:center;
+  margin-top:auto; /* força ir para baixo */
+  font-weight:600;
+}
+
+/* Small screens */
+@media (max-width:720px){
+  .header-hero{ padding:44px 16px }
+  .header-hero h1{ font-size:28px }
+  .navbar{gap:10px;padding:10px}
+  .autor{width:100%}
+  main.site-main{ margin:20px auto; padding:0 12px 28px }
+}
